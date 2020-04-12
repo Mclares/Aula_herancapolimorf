@@ -1,0 +1,54 @@
+package entities;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import entities.enums.OrderStatus_ex1;
+
+public class Order_ex1 {
+	
+	private Date moment;
+	private OrderStatus_ex1 orderstatus;
+	
+	private List<OrderItem_ex1> itens = new ArrayList<>();
+	
+	public Order_ex1() {
+	}
+
+	public Order_ex1(Date moment, OrderStatus_ex1 orderstatus) {
+		this.moment = moment;
+		this.orderstatus = orderstatus;
+	}
+
+	public Date getMoment() {
+		return moment;
+	}
+
+	public void setMoment(Date moment) {
+		this.moment = moment;
+	}
+
+	public OrderStatus_ex1 getOrderstatus() {
+		return orderstatus;
+	}
+
+	public void setOrderstatus(OrderStatus_ex1 orderstatus) {
+		this.orderstatus = orderstatus;
+	}
+
+	public List<OrderItem_ex1> getItem() {
+		return itens;
+	}
+
+	public void addItem(OrderItem_ex1 item) {
+		itens.add(item);
+	}
+	
+	public void removeItem(OrderItem_ex1 item) {
+		itens.remove(item);
+	}
+	
+	
+	
+}

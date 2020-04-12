@@ -1,0 +1,35 @@
+package entities;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import entities.enums.OrderStatus_ex1;
+
+public class Order_ex1 {
+	
+	private Date moment;
+	private OrderStatus_ex1 orderStatus;
+	
+	private Client_ex1 client;
+	private List<OrderItem_ex1> items = new ArrayList<>();
+	
+	public Order_ex1() {
+	}
+	
+	public Order_ex1(Date moment, OrderStatus_ex1 orderStatus, Client_ex1 client) {
+		this.moment = moment;
+		this.orderStatus = orderStatus;
+		this.client = client;
+	}
+
+	
+
+	public double total() {
+		double sum = 0;
+		for (OrderItem_ex1 i : items) {
+			sum += i.subTotal(); 
+		}
+		return sum;
+	}	
+}
